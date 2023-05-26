@@ -1,0 +1,24 @@
+{
+  "name": "secp256r1-computation",
+  "version": "0.0.1",
+  "description": "A minimalist package for computing precomputation tables on the secp256r1 elliptic curve.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "qd-qd",
+    "email": "qdqdqdqdqd@protonmail.com",
+    "url": "https://twitter.com/qdqd___"
+  },
+  "contributors": [
+    {
+      "name": "rdubois-crypto",
+      "email": "renaud.dubois@ledger.fr"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@noble/curves": "^1.0.0"
+  }
+}
