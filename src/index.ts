@@ -1,17 +1,16 @@
-const { secp256r1 } = require("@noble/curves/p256");
+import { secp256r1 } from "@noble/curves/p256";
+
+export type AffineProjectivePoint = ReturnType<typeof secp256r1.ProjectivePoint.fromAffine>;
 
 // G is the generator of the curve
-const G = secp256r1.ProjectivePoint.fromAffine({
-  x: secp256r1.CURVE.Gx,
-  y: secp256r1.CURVE.Gy,
-});
+const G = secp256r1.ProjectivePoint.fromAffine({ x: secp256r1.CURVE.Gx, y: secp256r1.CURVE.Gy });
 
 /**
  * Computes a table of precomputed points for use in the scalar multiplication algorithm.
- * @param {BigInt} Q - The public key to use in the scalar multiplication.
+ * @param {ProjPointType<bigint>} Q - The public key to use in the scalar multiplication.
  * @returns {Array<ProjectivePoint>} The precomputed table of points.
  */
-function computePoints(Q) {
+function computePoints(Q: AffineProjectivePoint): AffineProjectivePoint[] {
   // Initialize Pow64_PQ and precomputedPoints arrays (will be filled later)
   // Pow64_PQ is a table of 8 points (G, G2, G3, G4, Q, Q2, Q3, Q4)
   let Pow64_PQ = Array(8).fill(Q);
@@ -52,7 +51,7 @@ function computePoints(Q) {
  * @param {number} n - The desired length of the padded coordinate (default: 64).
  * @returns {string} The padded coordinate as a hexadecimal string.
  */
-function leftPadCoord(coord, n = 64) {
+function leftPadCoord(coord: bigint, n = 64): string {
   // Convert coord to a hexadecimal string
   const hex_str = coord.toString(16);
 
@@ -65,7 +64,7 @@ function leftPadCoord(coord, n = 64) {
  * @param {Array<{x: BigInt, y: BigInt}>} precomputedPoints - The array of points to concatenate.
  * @returns {string} The concatenated x and y coordinates as a hexadecimal string.
  */
-function concatenatePoints(precomputedPoints) {
+function concatenatePoints(precomputedPoints: AffineProjectivePoint[]): string {
   return precomputedPoints.reduce((accumulator, point, index) => {
     const px = leftPadCoord(point.x);
     const py = index === 0 ? leftPadCoord(point.py) : leftPadCoord(point.y);
@@ -74,7 +73,7 @@ function concatenatePoints(precomputedPoints) {
   }, "");
 }
 
-(async function main() {
+export default async function main() {
   // Load the C0 and C1 environment variables and convert them to BigInts
   const C0 = BigInt(process.env.C0);
   const C1 = BigInt(process.env.C1);
@@ -88,5 +87,5 @@ function concatenatePoints(precomputedPoints) {
   // Concatenate the points into a single string
   const concatenated_points = concatenatePoints(precomputedPoints);
 
-  process.stdout.write(concatenated_points.trim());
-})();
+  return concatenated_points;
+};

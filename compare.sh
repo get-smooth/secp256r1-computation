@@ -7,7 +7,7 @@
 # Usage: compare.sh [-v]
 
 # generate random values for C0 and C1
-eval $(node ./src/utils/generator.js)
+eval $(node ./scripts/generator.js)
 echo -n "C0: "
 echo $C0
 echo -n "C1: "

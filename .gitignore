@@ -9,3 +9,6 @@ compare
 
 # javascript dependencies
 node_modules
+
+# swc output directory
+dist
