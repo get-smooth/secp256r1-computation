@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "swc src -d dist",
-    "test": "jest",
-    "test:coverage": "jest --coverage --coverageReporters html",
-    "test:verbose": "jest --verbose"
+    "test": "jest --testPathIgnorePatterns=tests/differential",
+    "test:coverage": "test -- --coverage --coverageReporters html",
+    "test:verbose": "test -- --verbose",
+    "test:diff": "jest --verbose tests/differential"
   },
   "author": {
     "name": "qd-qd",
