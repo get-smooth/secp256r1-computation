@@ -1,7 +1,6 @@
 import { secp256r1 } from "@noble/curves/p256";
-import { leftPadCoord } from "./utils";
-
-export type AffineProjectivePoint = ReturnType<typeof secp256r1.ProjectivePoint.fromAffine>;
+import { concatenatePoints } from "./utils";
+import type { AffineProjectivePoint } from "./utils";
 
 // G is the generator of the curve
 const G = secp256r1.ProjectivePoint.fromAffine({ x: secp256r1.CURVE.Gx, y: secp256r1.CURVE.Gy });
@@ -44,20 +43,6 @@ function computePoints(Q: AffineProjectivePoint): AffineProjectivePoint[] {
 
   // Return the precomputed table of points
   return precomputedPoints;
-}
-
-/**
- * Concatenates the x and y coordinates of each point in an array of points into a single string.
- * @param {Array<{x: BigInt, y: BigInt}>} precomputedPoints - The array of points to concatenate.
- * @returns {string} The concatenated x and y coordinates as a hexadecimal string.
- */
-export function concatenatePoints(precomputedPoints: AffineProjectivePoint[]): string {
-  return precomputedPoints.reduce((accumulator, point, index) => {
-    const px = leftPadCoord(point.x);
-    const py = index === 0 ? leftPadCoord(point.py) : leftPadCoord(point.y);
-
-    return `${accumulator}${px}${py}`;
-  }, "");
 }
 
 export default async function getPrecomputedPoints() {
