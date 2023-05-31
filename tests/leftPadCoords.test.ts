@@ -43,7 +43,7 @@ describe("specific case", () => {
     });
 
     it("pads a multi-digit hex value with zeros", () => {
-        const testedValue = 0x234455654345345;
+        const testedValue = 0x2344556543453;
         const testValueStringify = BigInt(testedValue).toString(16);
         const expectedLeadingZeros = "0".repeat(64 - testValueStringify.length);
 

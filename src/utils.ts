@@ -17,7 +17,7 @@ export function leftPadCoord(coord: bigint, n = 64): string {
 
     // Add leading zeros to the string to make it length n if needed
     return hex_str.padStart(n, "0");
-};
+}
 
 /**
  * Concatenates the x and y coordinates of each point in an array of points into a single string.
@@ -31,7 +31,7 @@ export function concatenatePoints(precomputedPoints: AffineProjectivePoint[]): s
 
         return `${accumulator}${px}${py}`;
     }, "");
-};
+}
 
 /**
  * Computes a table of precomputed points for use in the scalar multiplication algorithm.
@@ -41,8 +41,8 @@ export function concatenatePoints(precomputedPoints: AffineProjectivePoint[]): s
 export function computePoints(Q: AffineProjectivePoint): AffineProjectivePoint[] {
     // Initialize Pow64_PQ and precomputedPoints arrays (will be filled later)
     // Pow64_PQ is a table of 8 points (G, G2, G3, G4, Q, Q2, Q3, Q4)
-    let Pow64_PQ = Array(8).fill(Q);
-    let precomputedPoints = Array(256).fill(secp256r1.ProjectivePoint.ZERO);
+    const Pow64_PQ = Array(8).fill(Q);
+    const precomputedPoints = Array(256).fill(secp256r1.ProjectivePoint.ZERO);
 
     // Set the first elements of Pow64_PQ to the generator of the curve (G)
     Pow64_PQ[0] = G;

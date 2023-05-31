@@ -19,6 +19,6 @@ function isPointOnCurve(x: bigint, y: bigint) {
 
     // Check if y^2 mod p equals x^3 + ax + b mod p
     return firstSide === secondSide;
-};
+}
 
 export default isPointOnCurve;

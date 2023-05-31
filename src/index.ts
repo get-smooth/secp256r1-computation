@@ -12,4 +12,4 @@ export default async function precomputePoints(x: bigint, y: bigint): Promise<st
   const concatenatedPoints = concatenatePoints(precomputedPoints);
 
   return concatenatedPoints;
-};
+}
