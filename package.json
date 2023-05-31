@@ -10,7 +10,9 @@
     "test:verbose": "test -- --verbose",
     "test:diff": "jest --verbose tests/differential",
     "lint": "eslint src tests --ext .ts",
-    "lint:fix": "eslint src tests --ext .ts --fix"
+    "lint:fix": "eslint src tests --ext .ts --fix",
+    "prettier": "prettier --check **/*.ts",
+    "prettier:fix": "prettier --write **/*.ts"
   },
   "author": {
     "name": "qd-qd",
@@ -37,6 +39,7 @@
     "@typescript-eslint/parser": "^5.59.8",
     "eslint": "^8.41.0",
     "jest": "^29.5.0",
+    "prettier": "2.8.8",
     "typescript": "^5.0.4"
   }
 }
