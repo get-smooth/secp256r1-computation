@@ -1,5 +1,5 @@
 {
-  "name": "secp256r1-computation",
+  "name": "@0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation",
   "version": "0.0.1",
   "description": "A minimalist package for computing precomputation tables on the secp256r1 elliptic curve.",
   "main": "index.js",
