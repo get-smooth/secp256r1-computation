@@ -1,0 +1,35 @@
+name: Quality checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install modules
+        run: npm install
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run Prettier
+        run: npm run prettier
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install modules
+        run: npm install
+
+      - name: Run build
+        run: npm run build
