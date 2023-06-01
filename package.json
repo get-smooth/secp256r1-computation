@@ -13,7 +13,10 @@
     "lint:fix": "eslint src tests --ext .ts --fix",
     "prettier": "prettier --check **/*.ts",
     "prettier:fix": "prettier --write **/*.ts",
-    "cli": "npm run build -- -q && node scripts/cli.js"
+    "cli": "npm run build -- -q && node scripts/cli.js",
+    "hooks": "lefthook run pre-push",
+    "hooks:install": "lefthook install",
+    "hooks:uninstall": "lefthook uninstall"
   },
   "author": {
     "name": "qd-qd",
@@ -40,6 +43,7 @@
     "@typescript-eslint/parser": "^5.59.8",
     "eslint": "^8.41.0",
     "jest": "^29.5.0",
+    "lefthook": "^1.4.1",
     "prettier": "2.8.8",
     "typescript": "^5.0.4"
   }
