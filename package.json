@@ -6,8 +6,8 @@
   "scripts": {
     "build": "swc src -d dist",
     "test": "jest --testPathIgnorePatterns=tests/differential",
-    "test:coverage": "test -- --coverage --coverageReporters html",
-    "test:verbose": "test -- --verbose",
+    "test:coverage": "npm run test -- --coverage",
+    "test:verbose": "npm run test -- --verbose",
     "test:diff": "jest --verbose tests/differential",
     "lint": "eslint src tests --ext .ts",
     "lint:fix": "eslint src tests --ext .ts --fix",

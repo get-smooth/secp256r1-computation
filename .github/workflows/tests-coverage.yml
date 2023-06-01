@@ -1,0 +1,25 @@
+name: Unit tests coverage
+
+on:
+  pull_request:
+    branches:
+      - main
+      - prod
+
+jobs:
+  unit-test-coverage:
+    permissions:
+      checks: write
+      pull-requests: write
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install modules
+        run: npm install
+
+      # comment the PR with the current coverage
+      - uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          test-script: npm run test
