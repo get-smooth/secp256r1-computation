@@ -9,7 +9,17 @@ This library is a powerful tool designed to enhance the performance of ECDSA sig
 
 ## Installation
 
-WIP
+To install the `secp256r1-computation package`, you can use the following command in your terminal:
+
+```sh
+npm install @0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation
+```
+
+This will install the latest version of the package. Once the installation is complete, you can import the package into your project and start using it to generate precomputed points for the secp256r1 elliptic curve.
+
+> ℹ️ Note that this package is not published on the npm registry. It is only available on GitHub Packages. This means that you need to be authenticated to GitHub Packages to install it. For more information, please refer to the [GitHub documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package). We would be happy to deploy it on the npm registry if there is a need for it. Feel free to open an issue if you would like to see this package on the npm registry.
+
+Here's the [page of the package on GitHub Packages](https://github.com/0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation/pkgs/npm/secp256r1-computation)
 
 ## Contributing
 
