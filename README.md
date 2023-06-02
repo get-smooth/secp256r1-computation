@@ -25,6 +25,16 @@ This will install the packages listed in the `dependencies` and `devDependencies
 
 Now that you are ready to contribute, refer to the [contributing guidelines](./CONTRIBUTING.md) for more information.
 
+### Building the project
+
+The project uses [parcel](https://parceljs.org/) to build and bundle the code. To build the project, you can use the following command:
+
+```sh
+npm run build
+```
+
+> ℹ️ The build command targets an es2020 module. If you would like to see other targets supported, please feel free to open an issue.
+
 ### Git hooks
 
 This project uses `Lefthook` to manage Git hooks. Git hooks are scripts that run automatically when certain Git events occur, such as committing code or pushing changes to a remote repository. `Lefthook` makes it easy to manage and run any type of scripts.
@@ -87,6 +97,8 @@ This repository also exposes a script that can be used to generate the precomput
 ```sh
 npm run cli <x> <y>
 ```
+
+> ℹ️ Note that the script is a .mjs file. Consider using modern versions of nodejs to run it.
 
 ## Testing
 
