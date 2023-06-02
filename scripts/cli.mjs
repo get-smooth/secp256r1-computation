@@ -8,7 +8,7 @@
  * // Precompute the points of a public key with x=123 and y=456
  * npm run cli 123 456
  */
-const precomputePoints = require("../dist/index.js").default;
+import precomputePoints from "../dist/module.js";
 
 try {
   // get the arguments passed to the script
