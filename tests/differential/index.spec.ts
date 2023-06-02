@@ -35,9 +35,9 @@ function execute(command) {
     });
 }
 
-
 describe("differential testing", () => {
     const NUMBER_OF_TESTS = 15;
+    const TIMEOUT = 10_000;
 
     let x: string;
     let y: string;
@@ -65,6 +65,6 @@ describe("differential testing", () => {
 
         // compare both implementation to ensure they are the same
         expect(precomputedPointsBySage).toEqual(precomputedPointsByNode);
-    });
+    }, TIMEOUT);
 });
 
