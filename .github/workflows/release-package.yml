@@ -1,25 +1,27 @@
-name: Node.js Package
+name: Publish package to GitHub Packages
 
-# This workflow will run whenever a new release is created in our repository
-# If the tests and the build pass, then the package will be published to GitHub Packages
-
+# Trigger the create release workflow
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - "v*"
 
 jobs:
-  build:
+  release:
+    name: Create Release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Create Release
+        id: create_release
+        uses: "marvinpinto/action-automatic-releases@v1.2.1"
         with:
-          node-version: 18
-      - run: npm ci
-      - run: npm test
+          repo_token: "${{ secrets.SMOOTH_QDQD_SECP256R1_RELEASE_TOKEN }}"
+          prerelease: false
 
   publish-gpr:
-    needs: build
+    needs: release # wait for the release job to finish
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -31,6 +33,7 @@ jobs:
           node-version: 18
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
+      - run: npm run test
       - run: npm run build
       - run: npm publish
         env:
