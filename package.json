@@ -1,8 +1,18 @@
 {
   "name": "@0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation",
-  "version": "0.0.1",
-  "description": "A minimalist package for computing precomputation tables on the secp256r1 elliptic curve.",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "This library boosts ECDSA performance by generating a precomputed table of 256 points on the secp256r1 curve from a public key. This optimization speeds up point multiplication, making elliptic curve digital signature algorithms more efficient.",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "secp256r1",
+    "256r1"
+  ],
   "scripts": {
     "build": "swc src -d dist",
     "test": "jest --testPathIgnorePatterns=tests/differential",
@@ -29,6 +39,14 @@
       "email": "renaud.dubois@ledger.fr"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation/issues"
+  },
+  "homepage": "https://github.com/0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation#readme",
   "license": "MIT",
   "dependencies": {
     "@noble/curves": "^1.0.0"
