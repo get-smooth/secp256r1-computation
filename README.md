@@ -10,7 +10,23 @@ This library is a powerful tool designed to enhance the performance of ECDSA sig
 
 ## Installation
 
-To install the `secp256r1-computation package`, you can use the following command in your terminal:
+To install the `secp256r1-computation` package, you need to add the Github registry to your npm configuration. To do so, you can use the following command in your terminal:
+
+```sh
+npm config set @0x90d2b2b7fb7599eebb6e7a32980857d8:registry=https://npm.pkg.github.com
+```
+
+That will tell npm to use the Github registry for packages starting with `@0x90d2b2b7fb7599eebb6e7a32980857d8`.
+
+Once the Github registry is set, you have to create a **classic** token on Github. To do so, go to your [Github settings](https://github.com/settings/tokens). The token must have the `read:packages` scope. Once you have created the token, you can use the following command in your terminal to authenticate to the Github registry:
+
+```sh
+npm login --auth-type=legacy --registry=https://npm.pkg.github.com
+```
+
+The username is your Github username and your password is the token you just created.
+
+You are ready to install the package. To do so, you can use the following command in your terminal:
 
 ```sh
 npm install @0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation
