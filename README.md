@@ -109,12 +109,12 @@ The returned value is a string containing the precomputation table in JSON forma
 Here's an example of how to use this library:
 
 ```ts
-import { precomputePoints } from "secp256r1-computation";
+import precomputedPoints from "@0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation";
 
 const x = 0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdefn;
 const y = BitInt(42);
 
-const table = await precomputePoints(x, y);
+const points = await precomputePoints(x, y);
 ```
 
 ### As a CLI

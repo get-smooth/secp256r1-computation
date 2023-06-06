@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "This library boosts ECDSA performance by generating a precomputed table of 256 points on the secp256r1 curve from a public key. This optimization speeds up point multiplication, making elliptic curve digital signature algorithms more efficient.",
   "source": "src/index.ts",
-  "module": "dist/module.js",
+  "main": "dist/module.js",
   "types": "dist/types.d.ts",
   "type": "module",
   "files": [
