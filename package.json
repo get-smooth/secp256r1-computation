@@ -23,6 +23,7 @@
     "build": "parcel build",
     "build:verbose": "npm run build -- --detailed-report",
     "watch": "parcel watch",
+    "pretest": "npm run build -- --log-level=none",
     "test": "jest --testPathIgnorePatterns=tests/differential",
     "test:coverage": "npm run test -- --coverage",
     "test:verbose": "npm run test -- --verbose",

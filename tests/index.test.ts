@@ -1,11 +1,7 @@
 import precomputePoints from "../src";
 import { secp256r1 } from "@noble/curves/p256";
 import isPointOnCurve from "./utils/isPointOnCurve";
-import data from "./fixtures.json";
-
-// cast the JSON to the expected types
-type Fixture = { data: { pubkey: { x: string; y: string }; points: string }[] };
-const fixtures = data as Fixture;
+import fixtures from "./fixtures";
 
 /**
  * Splits a concatenated string of x and y coordinates into an array of {x, y} points.
