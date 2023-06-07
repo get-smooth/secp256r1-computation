@@ -9,6 +9,9 @@
   "files": [
     "dist"
   ],
+  "bin": {
+    "comput256r1": "cli.mjs"
+  },
   "keywords": [
     "secp256r1",
     "256r1"
@@ -28,7 +31,6 @@
     "lint:fix": "eslint src tests --ext .ts --fix",
     "prettier": "prettier --check **/*.ts",
     "prettier:fix": "prettier --write **/*.ts",
-    "cli": "npm run build && node scripts/cli.mjs",
     "hooks": "lefthook run pre-push",
     "hooks:install": "lefthook install",
     "hooks:uninstall": "lefthook uninstall"
