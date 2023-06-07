@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /**
  * This script can be run from the command line using `npm run cli` in order to precompute
  * the points of a public key and log the result to the console.s
