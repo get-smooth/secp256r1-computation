@@ -10,7 +10,7 @@
  * // Precompute the points of a public key with x=123 and y=456
  * npm run cli 123 456
  */
-import precomputePoints from "../dist/module.js";
+import precomputePoints from "./dist/module.js";
 
 try {
   // get the arguments passed to the script
@@ -23,7 +23,7 @@ try {
     );
 
   // try to convert the arguments to bigint then precompute the points and log the results
-  precomputePoints(BigInt(Number(x)), BigInt(Number(y))).then(console.log);
+  precomputePoints(BigInt(x), BigInt(y)).then(console.log);
 } catch (e) {
   console.error(e);
   process.exit(1);
