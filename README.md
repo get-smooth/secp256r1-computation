@@ -122,7 +122,7 @@ const points = await precomputePoints(x, y);
 This repository also exposes a script that can be used to generate the precomputation table from the command line. To use it, run the following command:
 
 ```sh
-npm run cli <x> <y>
+node cli.mjs <x> <y>
 ```
 
 > ℹ️ Note that the script is a .mjs file. Consider using modern versions of nodejs to run it.
