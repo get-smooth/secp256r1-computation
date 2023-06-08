@@ -119,13 +119,21 @@ const points = await precomputePoints(x, y);
 
 ### As a CLI
 
-This repository also exposes a script that can be used to generate the precomputation table from the command line. To use it, run the following command:
+This repository also exposes a script that can be used to generate the precomputation table from the command line. To use it when contributing to this library, run the following command:
 
 ```sh
 node cli.mjs <x> <y>
 ```
 
 > ℹ️ Note that the script is a .mjs file. Consider using modern versions of nodejs to run it.
+
+If you want to use it globally on your laptop, you can use `npx` for that. Run the following command to run and install the script globally:
+
+```sh
+npx @0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation <x> <y>
+```
+
+> 💡 You should probably set an zsh/bash/... alias for this command if you plan on using it often.
 
 ## Testing
 
