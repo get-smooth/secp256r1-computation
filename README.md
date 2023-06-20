@@ -86,10 +86,11 @@ This will run all the Git hooks defined in the .lefthook.yml file.
 
 #### Skipping git hooks
 
-If you need to skip Lefthook on purpose, you can use the `CI=true` flag when running Git commands. For example, to skip Lefthook when pushing code, you can use the following command:
+Should you need to intentionally skip Lefthook, you can pass the `--no-verify` flag to the git push command. To bypass
+Lefthook when pushing code, use the following command:
 
 ```sh
-CI=true git push
+git push origin --no-verify
 ```
 
 ## Usage
