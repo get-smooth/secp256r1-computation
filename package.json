@@ -1,5 +1,5 @@
 {
-  "name": "@0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation",
+  "name": "@smoo.th/secp256r1-computation",
   "version": "2.2.0",
   "description": "This library boosts ECDSA performance by generating a precomputed table of 256 points on the secp256r1 curve from a public key. This optimization speeds up point multiplication, making elliptic curve digital signature algorithms more efficient.",
   "source": "src/index.ts",
@@ -50,12 +50,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation.git"
+    "url": "git@github.com:get-smooth/secp256r1-computation.git"
   },
   "bugs": {
-    "url": "https://github.com/0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation/issues"
+    "url": "https://github.com/get-smooth/secp256r1-computation/issues"
   },
-  "homepage": "https://github.com/0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation#readme",
+  "homepage": "https://github.com/get-smooth/secp256r1-computation#readme",
   "license": "MIT",
   "dependencies": {
     "@noble/curves": "^1.0.0"

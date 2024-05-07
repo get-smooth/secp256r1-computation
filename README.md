@@ -1,8 +1,8 @@
 # secp256r1 computation
 
-[![quality workflow](https://github.com/0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation/actions/workflows/quality.yml)
-[![unit-test workflow](https://github.com/0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation/actions/workflows/tests.yml)
-[![Publish package to GitHub Packages](https://github.com/0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation/actions/workflows/release-package.yml/badge.svg)](https://github.com/0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation/actions/workflows/release-package.yml)
+[![quality workflow](https://github.com/get-smooth/secp256r1-computation/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/get-smooth/secp256r1-computation/actions/workflows/quality.yml)
+[![unit-test workflow](https://github.com/get-smooth/secp256r1-computation/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/get-smooth/secp256r1-computation/actions/workflows/tests.yml)
+[![Publish package to GitHub Packages](https://github.com/get-smooth/secp256r1-computation/actions/workflows/release-package.yml/badge.svg)](https://github.com/get-smooth/secp256r1-computation/actions/workflows/release-package.yml)
 
 ## Description
 
@@ -10,33 +10,13 @@ This library is a powerful tool designed to enhance the performance of ECDSA sig
 
 ## Installation
 
-To install the `secp256r1-computation` package, you need to add the Github registry to your npm configuration. To do so, you can use the following command in your terminal:
+To install the `secp256r1-computation` package, you can use the following command in your terminal:
 
 ```sh
-npm config set @0x90d2b2b7fb7599eebb6e7a32980857d8:registry=https://npm.pkg.github.com
-```
-
-That will tell npm to use the Github registry for packages starting with `@0x90d2b2b7fb7599eebb6e7a32980857d8`.
-
-Once the Github registry is set, you have to create a **classic** token on Github. To do so, go to your [Github settings](https://github.com/settings/tokens). The token must have the `read:packages` scope. Once you have created the token, you can use the following command in your terminal to authenticate to the Github registry:
-
-```sh
-npm login --auth-type=legacy --registry=https://npm.pkg.github.com
-```
-
-The username is your Github username and your password is the token you just created.
-
-You are ready to install the package. To do so, you can use the following command in your terminal:
-
-```sh
-npm install @0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation
+npm install @smoo.th/secp256r1-computation
 ```
 
 This will install the latest version of the package. Once the installation is complete, you can import the package into your project and start using it to generate precomputed points for the secp256r1 elliptic curve.
-
-> ℹ️ Note that this package is not published on the npm registry. It is only available on GitHub Packages. This means that you need to be authenticated to GitHub Packages to install it. For more information, please refer to the [GitHub documentation](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package). We would be happy to deploy it on the npm registry if there is a need for it. Feel free to open an issue if you would like to see this package on the npm registry.
-
-Here's the [page of the package on GitHub Packages](https://github.com/0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation/pkgs/npm/secp256r1-computation)
 
 ## Contributing
 
@@ -110,7 +90,7 @@ The returned value is a string containing the precomputation table in JSON forma
 Here's an example of how to use this library:
 
 ```ts
-import precomputedPoints from "@0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation";
+import precomputedPoints from "@smoo.th/secp256r1-computation";
 
 const x = 0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdefn;
 const y = BitInt(42);
@@ -131,7 +111,7 @@ node cli.mjs <x> <y>
 If you want to use it globally on your laptop, you can use `npx` for that. Run the following command to run and install the script globally:
 
 ```sh
-npx @0x90d2b2b7fb7599eebb6e7a32980857d8/secp256r1-computation <x> <y>
+npx @smoo.th/secp256r1-computation <x> <y>
 ```
 
 > 💡 You should probably set an zsh/bash/... alias for this command if you plan on using it often.
